@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>Advanced Report</h1>
+<div>
+  <mat-form-field>
+  <mat-select [{value}="selection"]>
+    <mat-option *ngFor="let option of options" [value]="option.id">{{option.text}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br><br>
+<button mat-raised-button color="primary" (click)="submitRequest()">Generate</button>
+</div>
+<div *ngIf="chart" class="reportChart">
+  <canvas id="canvas">{{chart}}</canvas>
+</div>
+
+<router-outlet></router-outlet>
